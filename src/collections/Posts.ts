@@ -28,7 +28,7 @@ export const Posts: CollectionConfig = {
         ],
       },
     },
-    { name: 'business', type: 'select', options: ['ACE Education', 'ACE Language Center', 'ACE WEB Services'] },
+    { name: 'business', type: 'select', options: ['ACE Education', 'ALC English'] },
     { name: 'region', type: 'select', hasMany: true, options: ['Malaysia', 'Bahrain', 'Gulf'] },
     { name: 'focusKeyword', type: 'text' },
     { name: 'excerpt', type: 'textarea' },

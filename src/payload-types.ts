@@ -179,7 +179,7 @@ export interface Post {
    * Khali chhor dein, title se khud ban jayega
    */
   slug: string;
-  business?: ('ACE Education' | 'ACE Language Center' | 'ACE WEB Services') | null;
+  business?: ('ACE Education' | 'ALC English') | null;
   region?: ('Malaysia' | 'Bahrain' | 'Gulf')[] | null;
   focusKeyword?: string | null;
   excerpt?: string | null;
@@ -221,7 +221,7 @@ export interface Course {
    * Khali chhor dein, title se khud ban jayega
    */
   slug: string;
-  business?: ('ACE Education' | 'ACE Language Center') | null;
+  business?: ('ACE Education' | 'ALC English') | null;
   category?:
     | (
         | 'IGCSE'

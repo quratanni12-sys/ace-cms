@@ -27,7 +27,7 @@ export const Courses: CollectionConfig = {
         ],
       },
     },
-    { name: 'business', type: 'select', options: ['ACE Education', 'ACE Language Center'] },
+    { name: 'business', type: 'select', options: ['ACE Education', 'ALC English'] },
     { name: 'category', type: 'select', options: ['IGCSE', 'A-Level', 'CBSE', 'IB', 'Homeschooling', 'Language', 'IELTS/PTE', 'Corporate English', 'Kids English'] },
     { name: 'region', type: 'select', hasMany: true, options: ['Malaysia', 'Bahrain'] },
     { name: 'mode', type: 'select', hasMany: true, options: ['Online', 'On-site', 'Home tuition'] },
