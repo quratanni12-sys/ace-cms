@@ -1,5 +1,5 @@
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { lexicalEditor, EXPERIMENTAL_TableFeature } from '@payloadcms/richtext-lexical'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -29,7 +29,9 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Posts, Courses, Leads],
-  editor: lexicalEditor(),
+  editor: lexicalEditor({
+  features: ({ defaultFeatures }) => [...defaultFeatures, EXPERIMENTAL_TableFeature()],
+}),
   secret: process.env.PAYLOAD_SECRET || '',
   cors: allowedOrigins,
   csrf: allowedOrigins,

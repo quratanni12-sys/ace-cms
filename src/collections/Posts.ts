@@ -33,6 +33,7 @@ export const Posts: CollectionConfig = {
     { name: 'focusKeyword', type: 'text' },
     { name: 'excerpt', type: 'textarea' },
     { name: 'content', type: 'richText' },
+    { name: 'contentHtml', type: 'textarea', admin: { description: 'Optional raw HTML. If filled, it is shown instead of Content.' } },
     { name: 'status', type: 'select', defaultValue: 'draft', options: ['draft', 'published'] },
   ],
 }
