@@ -1,6 +1,7 @@
 import { MigrateUpArgs, MigrateDownArgs, sql } from '@payloadcms/db-vercel-postgres'
 
 export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
+  await db.execute(sql`CREATE SCHEMA IF NOT EXISTS "cms"`)
   await db.execute(sql`
    CREATE TYPE "cms"."enum_posts_region" AS ENUM('Malaysia', 'Bahrain', 'Gulf');
   CREATE TYPE "cms"."enum_posts_business" AS ENUM('ACE Education', 'ACE Language Center', 'ACE WEB Services');
