@@ -198,6 +198,10 @@ export interface Post {
     };
     [k: string]: unknown;
   } | null;
+  /**
+   * Optional raw HTML. If filled, it is shown instead of Content.
+   */
+  contentHtml?: string | null;
   status?: ('draft' | 'published') | null;
   meta?: {
     title?: string | null;
@@ -427,6 +431,7 @@ export interface PostsSelect<T extends boolean = true> {
   focusKeyword?: T;
   excerpt?: T;
   content?: T;
+  contentHtml?: T;
   status?: T;
   meta?:
     | T
