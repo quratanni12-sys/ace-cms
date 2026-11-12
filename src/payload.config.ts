@@ -2,6 +2,7 @@ import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { resendAdapter } from '@payloadcms/email-resend'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
@@ -42,6 +43,11 @@ export default buildConfig({
     pool: {
       connectionString: process.env.POSTGRES_URL || '',
     },
+  }),
+  email: resendAdapter({
+    defaultFromAddress: process.env.EMAIL_FROM || 'onboarding@resend.dev',
+    defaultFromName: 'ALC English Leads',
+    apiKey: process.env.RESEND_API_KEY || '',
   }),
   sharp,
   plugins: [
